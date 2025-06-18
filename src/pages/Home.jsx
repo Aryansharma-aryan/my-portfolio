@@ -1,57 +1,85 @@
 import { Link } from "react-router-dom";
-
+import Typed from "typed.js";
+import { useEffect, useRef } from "react";
+import { FaGithub, FaLinkedin, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { SiTailwindcss, SiMongodb, SiVite } from "react-icons/si";
+import CountUp from "react-countup";
 
 export default function Home() {
+  const typedRef = useRef(null);
+  const typedInstance = useRef(null);
+
+  useEffect(() => {
+    typedInstance.current = new Typed(typedRef.current, {
+      strings: [
+        "Hi, I'm Aryan Sharma",
+        "MERN Stack Developer",
+        "Full-Stack Web Builder",
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true,
+    });
+
+    return () => {
+      typedInstance.current.destroy();
+    };
+  }, []);
+
   return (
-    <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-black to-gray-900 flex items-center justify-center px-6 py-16">
-      <div className="flex flex-col md:flex-row-reverse items-center gap-12 max-w-6xl w-full">
-        
-        {/* Circular Profile Image with Effects */}
-        <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-2xl group hover:scale-105 transition duration-500">
-          <img
-            src="/pic.jpg"
-            alt="Aryan Sharma"
-            className="w-full h-full object-cover scale-110 group-hover:scale-125 transition duration-700"
-          />
-          {/* Vignette & blur overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/40 rounded-full transition duration-500 group-hover:backdrop-blur-sm"></div>
-          {/* Soft glowing border */}
-          <div className="absolute inset-0 border-2 border-cyan-400/30 rounded-full"></div>
+    <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-black to-gray-900 flex items-center justify-center px-6 py-20">
+      <div className="max-w-4xl w-full text-center text-white animate-fadeIn">
+
+        {/* Header with Typing */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-8 tracking-tight">
+          <span
+            ref={typedRef}
+            className="bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-colorChange"
+          ></span>
+        </h1>
+
+        {/* Experience Counter */}
+        <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-6 font-medium">
+          <CountUp end={1} duration={3} />+ years of coding experience and building powerful web applications.
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+          <Link
+            to="/projects"
+            className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-lg font-semibold rounded-xl shadow-md hover:scale-105 hover:shadow-cyan-400/40 transition-all duration-300"
+          >
+            🚀 View Projects
+          </Link>
+
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 border border-pink-500 text-pink-400 text-lg font-semibold rounded-xl hover:bg-pink-500 hover:text-white shadow-md hover:shadow-pink-400/40 transition-all duration-300"
+          >
+            📄 Download Resume
+          </a>
         </div>
 
-        {/* Text Content */}
-        <div className="text-center md:text-left text-white flex-1">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-500 bg-clip-text text-transparent">
-              Hi, I'm Aryan Sharma
-            </span>
-          </h1>
+        {/* Social Links */}
+        <div className="flex justify-center gap-6 mb-10 text-3xl">
+          <a href="https://github.com/Aryansharma-aryan/" target="_blank" rel="noreferrer" className="hover:text-cyan-400">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/aryan-sharma-3497662a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer" className="hover:text-blue-400">
+            <FaLinkedin />
+          </a>
+        </div>
 
-          <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
-            MERN Stack Developer | I craft full-stack apps with modern UI/UX, strong functionality, and optimized performance.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mb-6">
-            <Link
-              to="/projects"
-              className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl shadow-md hover:scale-105 hover:shadow-cyan-400/40 transition-all duration-300"
-            >
-              🚀 View Projects
-            </Link>
-
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-3 border border-pink-500 text-pink-400 font-semibold rounded-xl hover:bg-pink-500 hover:text-white shadow-md hover:shadow-pink-400/40 transition-all duration-300"
-            >
-              📄 Download Resume
-            </a>
-          </div>
-
-          <p className="text-sm sm:text-base text-gray-400">
-            Tech Stack: React, Node.js, Express, MongoDB, Tailwind CSS, Vite
-          </p>
+        {/* Tech Stack Icons */}
+        <div className="flex justify-center flex-wrap gap-6 text-5xl text-gray-300">
+          <FaReact className="hover:text-cyan-400 transition duration-300" />
+          <FaNodeJs className="hover:text-green-400 transition duration-300" />
+          <SiMongodb className="hover:text-green-500 transition duration-300" />
+          <SiTailwindcss className="hover:text-blue-300 transition duration-300" />
+          <FaDatabase className="hover:text-yellow-300 transition duration-300" />
+          <SiVite className="hover:text-purple-300 transition duration-300" />
         </div>
       </div>
     </section>
