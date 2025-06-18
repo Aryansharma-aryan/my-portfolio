@@ -28,13 +28,13 @@ export default function Home() {
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-indigo-900 via-black to-gray-900 flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20">
-      <div className="max-w-5xl w-full text-center text-white animate-fadeIn space-y-8">
+      <div className="max-w-5xl w-full text-center text-white animate-fadeIn space-y-10">
 
-        {/* Header with Typing */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-snug">
+        {/* Large Typing Heading */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-tight">
           <span
             ref={typedRef}
-            className="bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 bg-clip-text text-transparent animate-colorChange"
+            className="bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 bg-clip-text text-transparent"
           ></span>
         </h1>
 
