@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import resume from "../assets/resume.pdf";
-import profile from "../assets/Pic.jpg";
+import resume from "../assets/RESUME.pdf";
+import profile from "../assets/ PIC.jpg";
 
 export default function Home() {
   return (
