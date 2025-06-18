@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import resume from "../assets/resume.pdf";
 import profile from "../assets/Pic.jpg";
 
 export default function Home() {
@@ -41,7 +40,7 @@ export default function Home() {
             </Link>
 
             <a
-              href={resume}
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 border border-pink-500 text-pink-400 font-semibold rounded-xl hover:bg-pink-500 hover:text-white shadow-md hover:shadow-pink-400/40 transition-all duration-300"
