@@ -10,6 +10,8 @@ import Contact from './pages/contact';
 import Footer from './pages/Footer';
 import Education from './pages/Education';
 import Experience from './pages/Experiance';
+import Skills from './pages/Skills';
+
 
 
 const App = () => {
@@ -25,6 +27,7 @@ const App = () => {
                 <Home />
                 <About />
                 <Projects />
+                <Skills/>
                 <TechStack />
                 <Experience/>
 

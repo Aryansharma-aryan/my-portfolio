@@ -14,7 +14,10 @@ const Navbar = () => {
   return (
     <header className="bg-gradient-to-r from-[#1e1e62] to-[#1b0039] fixed top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-white">Aryan Sharma</h1>
+       <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+  Aryan Sharma
+</h1>
+
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6">
