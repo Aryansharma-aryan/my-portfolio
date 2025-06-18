@@ -9,7 +9,7 @@ export default function Home() {
         {/* Circular Profile Image with Effects */}
         <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-2xl group hover:scale-105 transition duration-500">
           <img
-            src="/Pic.jpg"
+            src="/picture.jpg"
             alt="Aryan Sharma"
             className="w-full h-full object-cover scale-110 group-hover:scale-125 transition duration-700"
           />
