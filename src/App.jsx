@@ -5,7 +5,7 @@ import Navbar from './pages/Navbar';
 import Home from './pages/Home';
 import About from './components/About';
 import Projects from './pages/projects';
-import TechStack from './pages/techStacks';
+import TechStack from './pages/TechStacks';
 import Contact from './pages/contact';
 import Footer from './pages/Footer';
 import Education from './pages/Education';
