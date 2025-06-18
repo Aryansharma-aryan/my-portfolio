@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px #0ff, 0 0 5px #f0f, 0 0 10px #0ff;
+  }
+  50% {
+    text-shadow: 0 0 15px #0ff, 0 0 25px #f0f, 0 0 35px #0ff;
+  }
+}
+
+.animate-text-glow {
+  animation: textGlow 4s ease-in-out infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards;
+}
+
+
